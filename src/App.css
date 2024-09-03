@@ -1,0 +1,90 @@
+/* Universal Reset for consistent styling across elements */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in element's width and height */
+}
+
+html {
+  font-size: 62.5%; /* Sets 1rem to 10px for easier rem calculations */
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Use a default font-family */
+  background-color: #f7f7f7; /* Light background for readability */
+  color: #333; /* Darker text color for contrast */
+  line-height: 1.6; /* Default line height for better text readability */
+}
+
+img {
+  object-fit: contain; /* Ensures images retain their aspect ratio within their containers */
+  max-width: 100%; /* Ensures images are responsive */
+  height: auto;
+  display: block; /* Removes bottom space in inline-block elements */
+}
+
+/* Links should inherit color from parent and remove underline */
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block; /* Allows padding and margins */
+  transition: color 0.3s ease-in-out; /* Smooth transition on hover */
+}
+
+a:hover {
+  color: #0073e6; /* A color change for hovered links */
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none; /* Removes default styles */
+  padding: 0; /* Remove extra padding */
+}
+
+button:focus,
+input:focus {
+  outline: none; /* Removes focus outline */
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the loader */
+  z-index: 1000; /* Ensures loader is always on top */
+}
+
+/* Removing arrows for number input fields in Chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Remove number input arrows in Firefox */
+}
+
+/* Remove autofill background styling */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* Remove MS Edge clear/reveal button from input fields */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Remove default styles from date picker in Webkit browsers */
+input[type='date']::-webkit-calendar-picker-indicator {
+  background: transparent;
+  width: 85%;
+  color: transparent;
+  cursor: pointer;
+  position: absolute;
+}
